@@ -1,0 +1,191 @@
+/*@media (orientation: landscape or orientation: portrait) {горизонтально, вертикально
+  }
+*/
+@media only screen and (max-width: 1240px){
+    .sidebar .sidebar-block a:not(.overflow-displ),
+    .sidebar .sidebar-block div,
+    .sidebar .divider,
+    .sidebar-links p{
+        display: none;
+    }
+
+    .overflow-displ{
+        border-radius: 10px;
+        max-width: 60px;
+        max-height: 60px;
+        min-width: 40px;
+        min-height: 40px;
+        width: 90%;
+        height: 90%;
+        text-align: center;
+        margin: 4vh auto;
+    }
+
+    .overflow-displ img{
+        margin: 10px auto;
+    }
+}
+
+@media only screen and (min-width: 1240px){
+    .overflow-displ{
+        display: none;
+    }
+}
+
+:root{
+    --background-color: rgb(222, 211, 211);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Arial';
+    font-size: 16px;
+    background-color: var(--background-color);
+    height: 100vh;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0 20px 0;
+    overflow: hidden;
+}
+
+.base{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main{
+    width: 85vw;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sidebar{
+    position: sticky;
+    top: 0;
+    width: 15vw;
+    min-width: 80px;
+    height: 99vh;
+    padding: 0 1vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(145, 140, 145) rgba(255, 255, 255, 0%);
+    overflow-x: hidden;
+}
+
+.sidebar-block>div{
+    padding: 10px;
+}
+
+.medium-bold{
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(47, 41, 41);
+}
+
+.sidebar-block, .sidebar-links{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.sidebar-block>a:not(.no-graph, .overflow-displ){
+    padding: 1vw 0 1vw 2.5vw;
+    margin: 0;
+    border-radius: 10px;
+    background-image: url("images/home.png");
+    background-repeat: no-repeat;
+    background-size: 3vh;
+    background-position: 5%;
+    overflow-x: hidden;
+    word-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.no-graph{
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+nav>a{
+    background-color: rgb(201, 191, 191);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 5px;
+    word-wrap: no-wrap;
+    white-space: nowrap;
+}
+
+.divider{
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 2vh;
+}
+
+.sidebar-block>a:hover, nav>a:hover{
+    background-color: rgb(145, 140, 145);
+}
+
+.video{
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 600px){
+        width: calc((100% - 60px));
+    }
+    @media only screen and (max-width: 900px) and (min-width: 600px){
+        width: calc((100% - 60px) / 2);
+    }
+    @media only screen and (min-width: 900px){
+        width: calc((100% - 60px)/3);
+    }
+}
+
+.video .clickbite{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing:-box;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+.video .clickbite:hover{
+    border-radius: 0;
+}
+
+.description{
+    height: calc(100% / 3);
+    padding: 0;
+    margin: 0;
+}
+
+h2{
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.description p{
+    font-size: 14px;
+    color: rgb(77, 74, 74);
+    margin: 0;
+}
